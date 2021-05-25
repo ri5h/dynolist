@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Head from 'next/head'
+import Header from '../components/Header'
 
 type Props = {
     children?: ReactNode
@@ -15,8 +16,9 @@ export default function Layout({ children, title = 'Default' }: Props) {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <section className="w-full antialiased min-h-screen bg-gray-50">
-                <Navbar />
+            <section className="antialiased bg-gray-50">
+                <Header />
+                {/* <Navbar /> */}
                 {children}
             </section>
         </>

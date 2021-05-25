@@ -15,6 +15,9 @@
 # production
 /build
 
+# inspirations ;)
+/inspirations
+
 # misc
 .DS_Store
 *.pem

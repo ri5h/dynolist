@@ -1,21 +1,14 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
+import { GetStaticProps } from 'next'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-type NavItem = {
-    name: string
-    href: string
+type HeaderProps = {
+    settings: SiteSettings
 }
 
-const navigation: NavItem[] = [
-    // { name: 'Product', href: '#' },
-    // { name: 'Features', href: '#' },
-    // { name: 'Marketplace', href: '#' },
-    // { name: 'Company', href: '#' },
-]
+export default function Header({ settings }: HeaderProps) {
 
-export default function Example() {
     return (
         <div className="relative bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -45,7 +38,7 @@ export default function Example() {
                                         </div>
                                     </div>
                                     <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                                        {navigation.map((item) => (
+                                        {settings.navigation.map((item: NavItem) => (
                                             <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
                                                 {item.name}
                                             </a>
@@ -90,7 +83,7 @@ export default function Example() {
                                             </div>
                                         </div>
                                         <div className="px-2 pt-2 pb-3 space-y-1">
-                                            {navigation.map((item) => (
+                                            {settings.navigation?.map((item: NavItem) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
@@ -116,12 +109,11 @@ export default function Example() {
                     <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div className="text-center">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                <span className="block xl:inline">Data to enrich your</span>{' '}
-                                <span className="block text-indigo-600 xl:inline">online business</span>
+                                <span className="block xl:inline">{settings.heading.titleHead}</span>{' '}
+                                <span className="block text-indigo-600 xl:inline">{settings.heading.titleTail}</span>
                             </h1>
                             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-                                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                                fugiat veniam occaecat fugiat aliqua.
+                                {settings.description}
                             </p>
                             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
                                 <div className="rounded-md shadow">

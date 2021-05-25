@@ -1,8 +1,17 @@
+import Layout from '../components/Layout'
+import Link from 'next/link'
+
+
 const index = () => {
   return (
-    <div>
-      <h1 className='text-8xl'>Bye bye world</h1>
-    </div>
+    <Layout title="Home | Next.js is Awesome">
+      <h1>Hello Next.js 🤪</h1>
+      <p>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </p>
+    </Layout>
   )
 }
 

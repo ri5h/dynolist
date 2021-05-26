@@ -1,21 +1,16 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
-import { getSiteSettings } from '../lib/siteSettingService'
 import Head from 'next/head'
 import Header from './Header'
-import getSettings from "../lib/getSettings";
+
 
 type LayoutProps = {
     children?: ReactNode
-    title?: string
+    title?: string,
+    settings: SiteSettings
 }
 
-const settings = getSiteSettings();
-
-export default function Layout({ children, title = 'Default' }: LayoutProps) {
-
-    getSettings().then(settings => updateSettings(settings))
-
+export default function Layout({ children, title = 'Default', settings }: LayoutProps) {
 
     return (
         <>
@@ -33,8 +28,4 @@ export default function Layout({ children, title = 'Default' }: LayoutProps) {
         </>
     );
 
-}
-
-export function updateSettings(settings: SiteSettings): void {
-    settings = settings
 }

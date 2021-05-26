@@ -9,7 +9,7 @@ type IndexProps = {
 
 export default function index({ settings }: IndexProps) {
   return (
-    <Layout title="Home">
+    <Layout title="Home" settings={settings}>
       <h1>Hello Next.js 🤪</h1>
       <p>
         <Link href="/about">
@@ -21,7 +21,9 @@ export default function index({ settings }: IndexProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+
   const settings = await getSettings();
+  console.log("index:", settings)
   return {
     props: {
       settings

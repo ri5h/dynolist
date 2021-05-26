@@ -15,3 +15,12 @@ type SiteSettings = {
     heading: Heading,
     description: string
 }
+
+type SingleRecord = {
+    id: string,
+    fields: FieldSet
+}
+
+type Settings = {
+    records: SingleRecord[]
+}

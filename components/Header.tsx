@@ -16,7 +16,7 @@ export default function Header({ settings }: HeaderProps) {
                         <>
                             <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
                                 <nav
-                                    className="relative flex items-center justify-between sm:h-10"
+                                    className="relative flex items-center justify-between sm:h-10 py-0 lg:py-10"
                                     aria-label="Global"
                                 >
                                     <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
@@ -24,9 +24,10 @@ export default function Header({ settings }: HeaderProps) {
                                             <a href="#">
                                                 <span className="sr-only">Workflow</span>
                                                 <img
-                                                    className="h-8 w-auto sm:h-10"
-                                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                                    className="lg:h-14 w-auto h-10 mx-auto"
+                                                    src="http://localhost:3000/img/logo.svg"
                                                 />
+                                                <span className="font-extrabold text-lg text-indigo-600">DinoList</span>
                                             </a>
                                             <div className="-mr-2 flex items-center md:hidden">
                                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -69,7 +70,7 @@ export default function Header({ settings }: HeaderProps) {
                                             <div>
                                                 <img
                                                     className="h-8 w-auto"
-                                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                                    src="http://localhost:3000/img/logo.svg"
                                                     alt=""
                                                 />
                                             </div>

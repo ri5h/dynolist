@@ -2,31 +2,35 @@ import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Layout from '../components/Layout'
 import Link from 'next/link'
 import getSettings from '../lib/getSettings'
+import getListOfItems from '../lib/getListOfItems'
+import ListOfItems from '../components/ListOfItems'
 
 type IndexProps = {
-  settings: SiteSettings
+  settings: SiteSettings,
+  listOfItems: ListOfItemsProps
+
 }
 
-export default function index({ settings }: IndexProps) {
+export default function index({ settings, listOfItems }: IndexProps) {
+
   return (
     <Layout title="Home" settings={settings}>
-      <h1>Hello Next.js 🤪</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
+      <ListOfItems {...listOfItems} />
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
 
-  const settings = await getSettings();
-  console.log("index:", settings)
+  const settings = await getSettings()
+  const listOfItems = {
+    items: await getListOfItems()
+  }
+
   return {
     props: {
-      settings
+      settings,
+      listOfItems
     }
   }
 }

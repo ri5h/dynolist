@@ -24,3 +24,14 @@ type SingleRecord = {
 type Settings = {
     records: SingleRecord[]
 }
+
+
+type ListOfItemsProps = {
+    items: Array<ItemProps>
+}
+
+type ItemProps = {
+    title: string,
+    subtitle: string,
+    body: string,
+}

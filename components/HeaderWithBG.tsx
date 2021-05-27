@@ -6,28 +6,29 @@ type HeaderProps = {
     settings: SiteSettings
 }
 
-export default function Header({ settings }: HeaderProps) {
+export default function HeaderWithBG({ settings }: HeaderProps) {
 
     return (
-        <div className="relative overflow-hidden bg-white border-b border-gray-50 shadow">
+        // <div className="relative overflow-hidden bg-header-image backdrop-opacity-75 bg-cover backdrop-filter backdrop-grayscale backdrop-blur">
+        <div className="relative overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto">
                 <Popover>
                     {({ open }) => (
                         <>
-                            <div className="relative my-2 px-4 sm:px-6 lg:px-8">
+                            <div className="relative px-4 sm:px-6 lg:px-">
                                 <nav
                                     className="relative flex items-center justify-between sm:h-10 py-0 lg:py-10"
                                     aria-label="Global"
                                 >
-                                    <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0 py-4">
+                                    <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                                         <div className="flex items-center justify-between w-full md:w-auto">
                                             <a href="#">
                                                 <span className="sr-only">Workflow</span>
                                                 <img
-                                                    className="w-auto h-14 mx-auto"
+                                                    className="lg:h-14 w-auto h-10 mx-auto"
                                                     src="http://localhost:3000/img/logo.svg"
                                                 />
-                                                {/* <span className="font-extrabold text-lg text-indigo-600">DinoList</span> */}
+                                                <span className="font-extrabold text-lg text-indigo-600">DinoList</span>
                                             </a>
                                             <div className="-mr-2 flex items-center md:hidden">
                                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -43,7 +44,7 @@ export default function Header({ settings }: HeaderProps) {
                                                 {item.name}
                                             </a>
                                         ))}
-                                        <a href="#" className="font-bold text-xl text-indigo-600 hover:text-indigo-500 hover:underline">
+                                        <a href="#" className="font-bold text-xl text-white">
                                             Log in
                       </a>
                                     </div>
@@ -95,7 +96,7 @@ export default function Header({ settings }: HeaderProps) {
                                         </div>
                                         <a
                                             href="#"
-                                            className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
+                                            className="block w-full px-5 py-3 text-center font-medium text-white"
                                         >
                                             Log in
                       </a>
@@ -105,8 +106,8 @@ export default function Header({ settings }: HeaderProps) {
                         </>
                     )}
                 </Popover>
-                <div className="relative z-1 lg:max-w-4xl lg:w-full mx-auto my-20">
-                    <main className="my-auto mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="relative z-10 bg-red-200 lg:max-w-4xl mx-auto">
+                    <main className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                                 <span className="block xl:inline">{settings.heading.titleHead}</span>{' '}

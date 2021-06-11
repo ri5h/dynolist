@@ -109,10 +109,10 @@ export default function Header({ settings }: HeaderProps) {
                     <main className="my-auto mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                <span className="block xl:inline">{settings.heading.titleHead}</span>{' '}
-                                <span className="block text-indigo-600 xl:inline">{settings.heading.titleTail}</span>
+                                <div className="block text-indigo-600">{settings.heading.titleHead}</div>{' '}
+                                <div className="block text-2xl mt-2">{settings.heading.titleTail}</div>
                             </h1>
-                            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
+                            <p className="mt-4 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-8 md:text-xl">
                                 {settings.description}
                             </p>
                             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">

@@ -30,7 +30,7 @@ const minifyRecord = (record: Record<FieldSet>): SingleRecord => {
 
 export default async (req: NextApiRequest, res: NextApiResponse<Settings>) => {
 
-    const records = await table.select({}).all();
+    const records = await table.select({ maxRecords: 5 }).all();
     const minifiedRecords = getMinifiedRecords(records);
     //console.log(minifiedRecords)
 

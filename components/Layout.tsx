@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Head from 'next/head'
 import Header from './Header'
 import HeaderWithBG from "./HeaderWithBG";
+import Footer from "./Footer";
 
 
 type LayoutProps = {
@@ -25,6 +26,7 @@ export default function Layout({ children, title = 'Default', settings }: Layout
 
                 {/* <Navbar /> */}
                 {children}
+                <Footer />
             </section>
         </>
     );

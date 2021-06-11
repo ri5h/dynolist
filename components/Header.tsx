@@ -27,7 +27,6 @@ export default function Header({ settings }: HeaderProps) {
                                                     className="w-auto h-14 mx-auto"
                                                     src="http://localhost:3000/img/logo.svg"
                                                 />
-                                                {/* <span className="font-extrabold text-lg text-indigo-600">DinoList</span> */}
                                             </a>
                                             <div className="-mr-2 flex items-center md:hidden">
                                                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -108,10 +107,11 @@ export default function Header({ settings }: HeaderProps) {
                 <div className="relative z-1 lg:max-w-4xl lg:w-full mx-auto my-20">
                     <main className="my-auto mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <h2 className="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">{settings.heading.titleHead}{settings.heading.titleTail}</h2>
+                            {/* <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                                 <div className="block text-indigo-600">{settings.heading.titleHead}</div>{' '}
                                 <div className="block text-2xl mt-2">{settings.heading.titleTail}</div>
-                            </h1>
+                            </h1> */}
                             <p className="mt-4 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-8 md:text-xl">
                                 {settings.description}
                             </p>

@@ -1,6 +1,5 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Layout from '../components/Layout'
-import Link from 'next/link'
 import getSettings from '../lib/getSettings'
 import getListOfItems from '../lib/getListOfItems'
 import ListOfItems from '../components/ListOfItems'

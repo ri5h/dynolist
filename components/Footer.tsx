@@ -1,4 +1,8 @@
-function Footer() {
+type FooterProps = {
+    footer: ContentItem
+}
+
+export default function Footer({ footer }: FooterProps) {
     return (
         <>
             <div className=" bg-linear-pink-invert pb-12">
@@ -19,6 +23,7 @@ function Footer() {
                     </div>
                     <div className="text-black flex flex-col md:items-center f-f-l pt-3">
                         <h1 className="text-2xl font-black">Create. Preview. Publish.</h1>
+                        <p className="text-md text-gray-600 text-center" dangerouslySetInnerHTML={{ __html: footer?.text || '' }}></p>
                         <div className="md:flex items-center mt-5 md:mt-10 text-base text-color f-f-l">
                             <h2 className=" md:mr-6 pb-4 md:py-0 cursor-pointer">Get started</h2>
                             <h2 className="cursor-pointer">Login</h2>
@@ -228,5 +233,3 @@ function Footer() {
         </>
     );
 }
-
-export default Footer;

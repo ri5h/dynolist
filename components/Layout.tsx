@@ -9,10 +9,10 @@ import Footer from "./Footer";
 type LayoutProps = {
     children?: ReactNode
     title?: string,
-    settings: SiteSettings
+    content: Content
 }
 
-export default function Layout({ children, title = 'Default', settings }: LayoutProps) {
+export default function Layout({ children, title = 'Default', content }: LayoutProps) {
 
     return (
         <>
@@ -22,11 +22,11 @@ export default function Layout({ children, title = 'Default', settings }: Layout
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <section className="antialiased bg-gray-100 min-h-screen">
-                <Header settings={settings} />
+                <Header content={content} />
 
                 {/* <Navbar /> */}
                 {children}
-                <Footer />
+                <Footer footer={content.footer} />
             </section>
         </>
     );

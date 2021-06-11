@@ -2,11 +2,15 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
+// type HeaderProps = {
+//     settings: SiteSettings
+// }
+
 type HeaderProps = {
-    settings: SiteSettings
+    content: Content
 }
 
-export default function Header({ settings }: HeaderProps) {
+export default function Header({ content }: HeaderProps) {
 
     return (
         <div className="relative overflow-hidden bg-white border-b border-gray-50 shadow">
@@ -37,11 +41,11 @@ export default function Header({ settings }: HeaderProps) {
                                         </div>
                                     </div>
                                     <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                                        {settings.navigation.map((item: NavItem) => (
+                                        {/* {settings.navigation.map((item: NavItem) => (
                                             <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
                                                 {item.name}
                                             </a>
-                                        ))}
+                                        ))} */}
                                         <a href="#" className="font-bold text-xl text-indigo-600 hover:text-indigo-500 hover:underline">
                                             Log in
                       </a>
@@ -82,7 +86,7 @@ export default function Header({ settings }: HeaderProps) {
                                             </div>
                                         </div>
                                         <div className="px-2 pt-2 pb-3 space-y-1">
-                                            {settings.navigation?.map((item: NavItem) => (
+                                            {/* {settings.navigation?.map((item: NavItem) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
@@ -90,7 +94,7 @@ export default function Header({ settings }: HeaderProps) {
                                                 >
                                                     {item.name}
                                                 </a>
-                                            ))}
+                                            ))} */}
                                         </div>
                                         <a
                                             href="#"
@@ -107,13 +111,13 @@ export default function Header({ settings }: HeaderProps) {
                 <div className="relative z-1 lg:max-w-4xl lg:w-full mx-auto my-20">
                     <main className="my-auto mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
-                            <h2 className="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">{settings.heading.titleHead}{settings.heading.titleTail}</h2>
+                            <h2 className="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">{content.header?.title}</h2>
                             {/* <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                                 <div className="block text-indigo-600">{settings.heading.titleHead}</div>{' '}
                                 <div className="block text-2xl mt-2">{settings.heading.titleTail}</div>
                             </h1> */}
                             <p className="mt-4 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-8 md:text-xl">
-                                {settings.description}
+                                {content.header?.text}
                             </p>
                             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
                                 <div className="rounded-md shadow">

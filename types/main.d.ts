@@ -1,3 +1,18 @@
+interface ContentItem {
+    id: string,
+    type: string,
+    title: ?string,
+    text: ?string,
+}
+
+type Content = {
+    header: ContentItem,
+    list: ContentItem,
+    footer: ContentItem,
+    [k: string]: any // To allow dynamically populating the object
+}
+
+
 type NavItem = {
     name: string
     href: string

@@ -1,5 +1,5 @@
 {
     "name": "dynolist",
     "version": "1.0.1",
-    "types": "./*.d.ts"
+    "types": "main.d.ts"
 }

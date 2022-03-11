@@ -1,10 +1,10 @@
-import Layout from '../components/v2/Layout'
+import Layout2 from '../components/v2/Layout2'
 
 function Home() {
     return (
-        <Layout title="Home">
+        <Layout2 title="Home">
             home sweet home
-        </Layout>
+        </Layout2>
     )
 }
 

@@ -8,7 +8,7 @@ type LayoutProps = {
     title?: string
 }
 
-export default function Layout({ children, title = 'Title Here' }: LayoutProps) {
+export default function Layout2({ children, title = 'Title Here' }: LayoutProps) {
 
     return (
         <>

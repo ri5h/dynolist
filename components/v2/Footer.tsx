@@ -1,4 +1,18 @@
-import Logo from './Logo'
+import Logo from './Header/Logo'
+
+type Footer = {
+    title: string,
+    subtitle: string,
+    copyright: string
+}
+
+const provideData = (): Footer => {
+    return {
+        title: "Create. Preview. Publish.",
+        subtitle: "Most of our data is scraped from the best sources across the internet (Stackoverflow, LinkedIn, ...). Made with ❤️ in Munich.",
+        copyright: "© 2020 DynoList. All rights reserved"
+    };
+}
 
 export default function Footer() {
 
@@ -29,18 +43,4 @@ export default function Footer() {
             </div>
         </>
     );
-}
-
-const provideData = (): Footer => {
-    return {
-        title: "Create. Preview. Publish.",
-        subtitle: "Most of our data is scraped from the best sources across the internet (Stackoverflow, LinkedIn, ...). Made with ❤️ in Munich.",
-        copyright: "© 2020 DynoList. All rights reserved"
-    };
-}
-
-type Footer = {
-    title: string,
-    subtitle: string,
-    copyright: string
 }

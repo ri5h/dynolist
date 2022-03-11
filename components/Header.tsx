@@ -48,7 +48,7 @@ export default function Header({ content }: HeaderProps) {
                                         ))} */}
                                         <a href="#" className="font-bold text-xl text-indigo-600 hover:text-indigo-500 hover:underline">
                                             Log in
-                      </a>
+                                        </a>
                                     </div>
                                 </nav>
                             </div>
@@ -101,7 +101,7 @@ export default function Header({ content }: HeaderProps) {
                                             className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
                                         >
                                             Log in
-                      </a>
+                                        </a>
                                     </div>
                                 </Popover.Panel>
                             </Transition>

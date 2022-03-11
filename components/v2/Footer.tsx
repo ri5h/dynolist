@@ -39,8 +39,8 @@ const provideData = (): Footer => {
     };
 }
 
-interface Footer {
-    title: string;
-    subtitle: string;
-    copyright: string;
+type Footer = {
+    title: string,
+    subtitle: string,
+    copyright: string
 }

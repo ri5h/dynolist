@@ -1,5 +1,5 @@
-import Layout from '../components/v2/Layout'
-import Jobs from '../components/v2/Jobs'
+import Layout from '../components/Layout'
+import Jobs from '../components/Jobs'
 
 function Home() {
     return (

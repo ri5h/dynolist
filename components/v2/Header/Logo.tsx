@@ -1,4 +1,4 @@
-export default () => {
+const Logo = () => {
     return (
         <img
             className="h-24 w-auto mb-4"
@@ -6,4 +6,6 @@ export default () => {
             alt=""
         />
     );
-}
+};
+
+export default Logo;

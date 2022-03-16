@@ -3,14 +3,14 @@ import fetcher from './fetcher'
 
 const url = `https://pokeapi.co/api/v2/pokemon/pikachu`
 
-function getJobs() {
+function useJobs() {
     const { data, error } = useSWR(url, fetcher)
 
     return {
-        user: data,
+        jobs: data,
         isLoading: !error && !data,
         isError: error
     }
 }
 
-export default getJobs
+export default useJobs

@@ -1,16 +1,12 @@
 import useSWR from 'swr'
+import { JobType } from '../../components/Jobs/JobSingle'
 import fetcher from './fetcher'
 
-const url = `https://pokeapi.co/api/v2/pokemon/pikachu`
+const url = `/api/jobs`
 
-function useJobs() {
-    const { data, error } = useSWR(url, fetcher)
+export type JobsType = Array<JobType>
 
-    return {
-        jobs: data,
-        isLoading: !error && !data,
-        isError: error
-    }
+export const useJobs = () => {
+    const { data, error } = useSWR<JobsType, String>(url, fetcher)
+    return { data, error }
 }
-
-export default useJobs

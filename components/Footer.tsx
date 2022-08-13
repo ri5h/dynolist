@@ -3,20 +3,22 @@ import Logo from './Header/Logo'
 type Footer = {
     title: string,
     subtitle: string,
+    subtitle2?: string,
     copyright: string
 }
 
 const provideData = (): Footer => {
     return {
         title: "Create. Preview. Publish.",
-        subtitle: "Most of our data is scraped from the best sources across the internet (Stackoverflow, LinkedIn, ...). Made with ❤️ in Munich.",
+        subtitle: "Most of our data is scraped from the best sources across the internet (Stackoverflow, LinkedIn, ...).",
+        subtitle2: "Made with ❤️ in Munich.",
         copyright: "© 2020 DynoList. All rights reserved"
     };
 }
 
 export default function Footer() {
 
-    let { title, subtitle, copyright } = provideData();
+    let { title, subtitle, subtitle2, copyright } = provideData();
 
     return (
         <>
@@ -36,6 +38,9 @@ export default function Footer() {
                         </div>
                         <div className="text-sm text-color mb-10 f-f-l mt-6">
                             <p>{copyright}</p>
+                            {subtitle2 && <p className="text-md text-gray-600 text-center">
+                                {subtitle2}
+                            </p>}
                         </div>
                     </div>
                     <div className="w-9/12  h-0.5 bg-gray-100 rounded-full" />

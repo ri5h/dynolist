@@ -40,7 +40,6 @@ type Settings = {
     records: SingleRecord[]
 }
 
-
 type ListOfItemsProps = {
     items: Array<ItemProps>
 }

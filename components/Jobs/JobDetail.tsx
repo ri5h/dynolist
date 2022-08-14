@@ -1,10 +1,17 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { JobType } from "./JobSingle";
 
-export default function JobDetail(description: string) {
+type TJobDetailType = {
+    description: string
+}
 
+export default function JobDetail({ description }: TJobDetailType) {
     return <div>
-        job details
-        {description && <p>{description}</p>}
+        {description &&
+            <div className={`mt-4 p-4`}>
+                <ReactMarkdown children={description} remarkPlugins={[remarkGfm]} />
+            </div>
+        }
     </div>
-
 }

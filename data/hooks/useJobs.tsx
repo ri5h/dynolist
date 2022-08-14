@@ -2,7 +2,8 @@ import useSWR from 'swr'
 import { JobType } from '../../components/Jobs/JobSingle'
 import fetcher from './fetcher'
 
-const url = `/api/jobs`
+// const url = `/api/jobs`
+const url = `/api/atjobs`
 
 export type JobsType = Array<JobType>
 

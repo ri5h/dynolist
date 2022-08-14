@@ -1,8 +1,8 @@
 import { faAngleDown, faAngleUp, faBuildingLock, faLocation, faLocationDot, faMapLocation, faMarker, faTriangleCircleSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import JobDetail from './JobDetail'
+import JobDetailToggle from './JobDetailToggle'
 
 export type JobType = {
     title: string,
@@ -38,20 +38,10 @@ export default function JobSingle({ title, company, address, salary, img, descri
                 </div>
                 <div className="ml-auto">
                     <p>Salary Range: {salary}</p>
-                    {description &&
-                        <div className='float-right text-indigo-800 cursor-pointer' onClick={() => setOpen(!open)}>
-                            {open && <FontAwesomeIcon icon={faAngleUp} />}
-                            {!open && <FontAwesomeIcon icon={faAngleDown} />}
-                            <span className="ml-1 select-none">View details</span>
-                        </div>
-                    }
+                    {description && <JobDetailToggle isOpen={open} setOpen={setOpen} />}
                 </div>
             </div>
-            {description &&
-                <div className={`mt-4 ${open ? 'block' : 'hidden'}`}>
-                    <ReactMarkdown children={description} remarkPlugins={[remarkGfm]} />
-                </div>
-            }
+            {description && open && <JobDetail description={description} />}
         </div>
 
     )

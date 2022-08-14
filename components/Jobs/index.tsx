@@ -9,7 +9,7 @@ export default function Jobs() {
     if (!jobs) return <h1>Loading...</h1>
 
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
             {jobs.map((job: JobType) =>
                 < JobSingle {...job} />
             )}

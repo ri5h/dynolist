@@ -1,4 +1,5 @@
 import Airtable, { FieldSet, Record } from "airtable"
+import { Attachment } from "airtable/lib/attachment"
 import { NextApiRequest, NextApiResponse } from "next"
 import { JobType } from "../../components/Jobs/JobSingle"
 import { JobsType } from "../../data/hooks/useJobs"
@@ -8,13 +9,21 @@ const Config = {
     baseId: process.env.AIRTABLE_BASE_ID
 }
 
+const getThumbNailUrl = (record: Record<FieldSet>): string => {
+    const attachments = record.get('image') as Array<Attachment> | undefined
+    if (Array.isArray(attachments) && attachments.length && attachments[0].thumbnails) {
+        return attachments[0].thumbnails.small.url
+    }
+    return ""
+}
+
 const toJobType = (record: Record<FieldSet>): JobType => {
     return {
         title: record.get('title') as string,
         company: record.get('company') as string,
-        address: record.get('address') as string,
+        location: record.get('location') as string,
         salary: record.get('salary') as string,
-        img: record.get('image') as string,
+        img: getThumbNailUrl(record),
         description: record.get('description') as string
     }
 }
@@ -34,17 +43,8 @@ export default (req: NextApiRequest, res: NextApiResponse<JobsType>) => {
         .select({ view: "Grid view" })
         .eachPage(
             function page(records, fetchNextPage) {
-
-                records.forEach(function (record) {
-                    console.log('Retrieved', record.get('title'));
-                    jobs.push(toJobType(record))
-                });
-
-                // To fetch the next page of records, call `fetchNextPage`.
-                // If there are more records, `page` will get called again.
-                // If there are no more records, `done` will get called.
+                records.forEach((record) => jobs.push(toJobType(record)));
                 fetchNextPage();
-
             },
             function done(err) {
                 if (err) {

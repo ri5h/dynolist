@@ -7,13 +7,13 @@ import JobDetailToggle from './JobDetailToggle'
 export type JobType = {
     title: string,
     company: string,
-    address: string,
+    location: string,
     salary: string,
     img?: string,
     description?: string
 }
 
-export default function JobSingle({ title, company, address, salary, img, description }: JobType) {
+export default function JobSingle({ title, company, location, salary, img, description }: JobType) {
 
     const [open, setOpen] = useState(false)
 
@@ -32,7 +32,7 @@ export default function JobSingle({ title, company, address, salary, img, descri
                         </div>
                         <div className="ml-4">
                             <FontAwesomeIcon icon={faLocationDot} />
-                            <span className="ml-1">{address}</span>
+                            <span className="ml-1">{location}</span>
                         </div>
                     </p>
                 </div>

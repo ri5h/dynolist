@@ -13,7 +13,6 @@ export default function Jobs() {
             {jobs.map((job: JobType) =>
                 < JobSingle {...job} />
             )}
-
         </div>
     )
 }

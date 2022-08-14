@@ -37,7 +37,7 @@ export default function JobSingle({ title, company, address, salary, img, descri
                     </p>
                 </div>
                 <div className="ml-auto">
-                    <p>Salary Range: {salary}</p>
+                    <p className='font-bold'>$ {salary}</p>
                     {description && <JobDetailToggle isOpen={open} setOpen={setOpen} />}
                 </div>
             </div>

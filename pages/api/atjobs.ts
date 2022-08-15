@@ -1,13 +1,9 @@
-import Airtable, { FieldSet, Record } from "airtable"
+import { FieldSet, Record } from "airtable"
 import { Attachment } from "airtable/lib/attachment"
 import { NextApiRequest, NextApiResponse } from "next"
-import { JobType } from "../../components/Jobs/JobSingle"
-import { JobsType } from "../../data/hooks/useJobs"
-
-const Config = {
-    apiKey: process.env.AIRTABLE_API_KEY,
-    baseId: process.env.AIRTABLE_BASE_ID
-}
+import { TJobType } from "../../components/Jobs/JobSingle"
+import airtable from "../../data/hooks/airtable"
+import { TJobsType } from "../../data/hooks/useJobs"
 
 const getThumbNailUrl = (record: Record<FieldSet>): string => {
     const attachments = record.get('image') as Array<Attachment> | undefined
@@ -17,7 +13,7 @@ const getThumbNailUrl = (record: Record<FieldSet>): string => {
     return ""
 }
 
-const toJobType = (record: Record<FieldSet>): JobType => {
+const toJobType = (record: Record<FieldSet>): TJobType => {
     return {
         title: record.get('title') as string,
         company: record.get('company') as string,
@@ -28,18 +24,11 @@ const toJobType = (record: Record<FieldSet>): JobType => {
     }
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<JobsType>) => {
+export default (req: NextApiRequest, res: NextApiResponse<TJobsType>) => {
 
-    let jobs: Array<JobType> = [];
+    let jobs: Array<TJobType> = [];
 
-    if (!Config.baseId) {
-        return res.status(500)
-    }
-
-    // const base = new Airtable({ apiKey: Config.apiKey }).base(Config.baseId);
-    var base = new Airtable({ apiKey: 'keyvw8jEKxemKuj0j' }).base('appRWuC5U6rnQSqq5');
-
-    base('jobs')
+    airtable('jobs')
         .select({ view: "Grid view" })
         .eachPage(
             function page(records, fetchNextPage) {

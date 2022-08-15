@@ -4,7 +4,7 @@ import { useState } from 'react'
 import JobDetail from './JobDetail'
 import JobDetailToggle from './JobDetailToggle'
 
-export type JobType = {
+export type TJobType = {
     title: string,
     company: string,
     location: string,
@@ -13,7 +13,7 @@ export type JobType = {
     description?: string
 }
 
-export default function JobSingle({ title, company, location, salary, img, description }: JobType) {
+export default function JobSingle({ title, company, location, salary, img, description }: TJobType) {
 
     const [open, setOpen] = useState(false)
 

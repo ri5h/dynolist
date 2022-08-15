@@ -1,4 +1,4 @@
-import { JobType } from './JobSingle'
+import { TJobType } from './JobSingle'
 import JobSingle from './JobSingle'
 import { useJobs } from '../../data/hooks/useJobs'
 
@@ -10,7 +10,7 @@ export default function Jobs() {
 
     return (
         <div className='max-w-7xl mx-auto'>
-            {jobs.map((job: JobType) =>
+            {jobs.map((job: TJobType) =>
                 < JobSingle {...job} />
             )}
         </div>

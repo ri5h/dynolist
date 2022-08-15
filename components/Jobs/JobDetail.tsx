@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { JobType } from "./JobSingle";
+import { TJobType } from "./JobSingle";
 
 type TJobDetailType = {
     description: string

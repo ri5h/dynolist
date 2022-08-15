@@ -13,10 +13,19 @@ const getThumbNailUrl = (record: Record<FieldSet>): string => {
     return ""
 }
 
+const getMediumImageUrl = (record: Record<FieldSet>): string => {
+    const attachments = record.get('image') as Array<Attachment> | undefined
+    if (Array.isArray(attachments) && attachments.length && attachments[0].thumbnails) {
+        return attachments[0].thumbnails.large.url
+    }
+    return ""
+}
+
 
 const toConfigType = (record: Record<FieldSet>): TConfigType => {
     return {
         logo: getThumbNailUrl(record),
+        logoLarge: getMediumImageUrl(record),
         title: record.get('title') as string,
         subtitle: record.get('subtitle') as string,
         button: {

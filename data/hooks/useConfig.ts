@@ -8,6 +8,7 @@ type TButtonType = {
 
 export type TConfigType = {
     logo: string,
+    logoLarge: string,
     title: string,
     subtitle: string,
     button: TButtonType,

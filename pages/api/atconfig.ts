@@ -24,6 +24,7 @@ const getMediumImageUrl = (record: Record<FieldSet>): string => {
 
 const toConfigType = (record: Record<FieldSet>): TConfigType => {
     return {
+        appName: record.get('appName') as string,
         logo: getThumbNailUrl(record),
         logoLarge: getMediumImageUrl(record),
         title: record.get('title') as string,
@@ -37,8 +38,8 @@ const toConfigType = (record: Record<FieldSet>): TConfigType => {
             link: record.get('link') as string
         },
         footer: record.get('footer') as string,
-        copyright: record.get('copyright') as string
-
+        copyright: record.get('copyright') as string,
+        postajobLink: record.get('postajobLink') as string
     }
 }
 
@@ -50,14 +51,16 @@ export default (req: NextApiRequest, res: NextApiResponse<TConfigType>) => {
         .eachPage(
             function page(records, fetchNextPage) {
                 config = toConfigType(records[0])
-                fetchNextPage();
+                fetchNextPage()
             },
             function done(err) {
                 if (err) {
-                    console.error(err);
-                    return res.status(500);
+                    console.error(err)
+                    return res.status(500)
                 }
-                return res.status(200).json(config);
+                return res
+                    .status(200)
+                    .json(config as TConfigType)
             }
         )
 }

@@ -7,6 +7,7 @@ type TButtonType = {
 }
 
 export type TConfigType = {
+    appName: string,
     logo: string,
     logoLarge: string,
     title: string,
@@ -14,7 +15,8 @@ export type TConfigType = {
     button: TButtonType,
     secondaryButton?: TButtonType,
     footer: string,
-    copyright: string
+    copyright: string,
+    postajobLink: string,
 }
 
 const url = `/api/atconfig`

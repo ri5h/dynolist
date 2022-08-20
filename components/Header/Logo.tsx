@@ -1,6 +1,6 @@
 import { useConfig } from "../../data/hooks/useConfig";
 
-export default function Logo(large: { large?: boolean }) {
+export default function Logo({ large = false }: { large?: boolean }) {
 
     const { data: config, error } = useConfig()
 
@@ -9,9 +9,9 @@ export default function Logo(large: { large?: boolean }) {
 
     return (
         <img
-            className="h-24 w-auto mb-4"
-            src={large ? config.logoLarge : config.logo}
-            alt=""
+            className={`w-auto mb-4 ${large ? "h-24" : "h-12"}`}
+            src={config.logoLarge}
+            alt={`${config.appName} Logo`}
         />
     );
 };

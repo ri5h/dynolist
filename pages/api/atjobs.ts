@@ -8,7 +8,7 @@ import { TJobsType } from "../../data/hooks/useJobs"
 const getThumbNailUrl = (record: Record<FieldSet>): string => {
     const attachments = record.get('image') as Array<Attachment> | undefined
     if (Array.isArray(attachments) && attachments.length && attachments[0].thumbnails) {
-        return attachments[0].thumbnails.small.url
+        return attachments[0].thumbnails.large.url
     }
     return ""
 }
@@ -20,7 +20,8 @@ const toJobType = (record: Record<FieldSet>): TJobType => {
         location: record.get('location') as string,
         salary: record.get('salary') as string,
         img: getThumbNailUrl(record),
-        description: record.get('description') as string
+        description: record.get('description') as string,
+        link: record.get('link') as string
     }
 }
 

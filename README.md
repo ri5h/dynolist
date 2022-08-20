@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dynolist
+This is a job board that uses airtable base as a cms, inspired by https://table2site.com/. For any questions or comments reach out to me on twitter https://twitter.com/ri5hirajp
 
-## Getting Started
+## Tech Stack
+- nextjs
+- useSWR
+- tailwindcss
+- fontawesome
+- typescript
 
-First, run the development server:
+## Links
+- **Airtable base:** https://airtable.com/shrYry2CNtlBV2Cgx
+- **Demo site:** https://dynolist.vercel.app/
+- **Remote jobs api:** https://remoteok.com/api
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Screenshots
+![dynolist-home-page](https://user-images.githubusercontent.com/12214835/185757383-e43720b1-d535-4709-82d6-1abdc390c566.png)
+![Job expanded](https://user-images.githubusercontent.com/12214835/185757392-273b7e8e-8ed3-4ebc-853a-7605f4e7dab7.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
